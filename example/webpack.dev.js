@@ -93,7 +93,7 @@ module.exports = {
     new BuildChangeWebpackPlugin({
       cacheTime: 30,
       use: true,
-      rebuildChangeFiles: ['/Users/guolei11/Coding/demos/build-change-webpack-plugin/.eslintrc.js']
+      rebuildChangeFiles: [path.resolve(__dirname, './package.json')]
     })
   ]
 }
