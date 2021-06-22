@@ -2,6 +2,7 @@ const path = require('path')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
+const BuildChangeWebpackPlugin = require('./../src/index')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const buildPath = path.resolve(__dirname, 'dist')
@@ -20,7 +21,7 @@ module.exports = {
   },
 
   output: {
-    filename: '[name].[hash:20].js',
+    filename: '[name].js',
     path: buildPath
   },
 
@@ -88,6 +89,11 @@ module.exports = {
       chunks: ['contacts'],
       filename: 'contacts.html'
     }),
-    new HardSourceWebpackPlugin()
+    new HardSourceWebpackPlugin(),
+    new BuildChangeWebpackPlugin({
+      cacheTime: 30,
+      use: true,
+      rebuildChangeFiles: ['/Users/guolei11/Coding/demos/build-change-webpack-plugin/.eslintrc.js']
+    })
   ]
 }

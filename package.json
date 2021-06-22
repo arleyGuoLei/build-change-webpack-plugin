@@ -2,8 +2,10 @@
   "name": "build-change-webpack-plugin",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {},
+  "main": "src/index.js",
+  "scripts": {
+    "build": "cd example && npm run build:dev"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -15,5 +17,8 @@
       "node",
       "es6"
     ]
+  },
+  "dependencies": {
+    "create-hash": "^1.2.0"
   }
 }
